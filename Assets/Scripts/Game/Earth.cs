@@ -9,7 +9,7 @@ public class Earth : MonoBehaviour, IPointerClickHandler
 
 	public Action<Vector3> Click;
 
-	public float Radius => _collider.radius;
+	[field:SerializeField] public float Radius { get; private set; }
 
 	private SphereCollider _collider;
 

@@ -13,10 +13,10 @@ public class LocationTag : MonoBehaviour
     {
         _location = location;
 
-        transform.position = _location.ToVector3();
+        transform.position = _location.ToVector3() * Earth.Instance.Radius;
 
         _canvas.LookAt(Vector3.zero);
-        _canvas.position = Vector3.back * _canvasOffset;
+        _canvas.localPosition = Vector3.forward * _canvasOffset;
         _text.text = _location.LocationName;
     }
 }
