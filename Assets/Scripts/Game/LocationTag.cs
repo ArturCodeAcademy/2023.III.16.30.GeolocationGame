@@ -15,8 +15,8 @@ public class LocationTag : MonoBehaviour
 
         transform.position = _location.ToVector3() * Earth.Instance.Radius;
 
-        _canvas.LookAt(Vector3.zero);
-        _canvas.localPosition = Vector3.forward * _canvasOffset;
+        transform.LookAt(Vector3.zero);
+        _canvas.localPosition = Vector3.back * _canvasOffset;
         _text.text = _location.LocationName;
     }
 }
